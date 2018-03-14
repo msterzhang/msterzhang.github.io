@@ -61,33 +61,38 @@
       <div class="outer">
         <section id="main">
   
-    <article id="[layout]-博客" class="article article-type-[layout]" itemscope itemprop="blogPost">
+    <article id="post-博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/14/博客/" class="article-date">
-  <time datetime="2018-03-14T10:58:25.000Z" itemprop="datePublished">2018-03-14</time>
+  <time datetime="2018-03-14T10:58:25.088Z" itemprop="datePublished">2018-03-14</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/14/博客/">博客</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<h2 id="python爬虫教程"><a href="#python爬虫教程" class="headerlink" title="#python爬虫教程"></a>#python爬虫教程</h2><p>##1.requests库的使用</p>
+<p>###导入相关的库</p>
+<pre><code>import requests
+import re
+
+def get_img():
+    url = &apos;http://jandan.net/ooxx&apos;
+    html = requests.get(url).text
+    find_img_list = re.findall(&apos;img src=&quot;(.*)&quot;,html&apos;)
+    for img in find_img_list:
+        print(img)
+
+if __name__ == &apos;__main__&apos;:
+    get_img()
+</code></pre><h2 id="requests库用来请求html"><a href="#requests库用来请求html" class="headerlink" title="requests库用来请求html"></a>requests库用来请求html</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/14/博客/" data-id="cjer65c7k0000p0qqloghc0kx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/14/博客/" data-id="cjer7zh150000d4qqtxe90wrt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +132,7 @@
       <ul>
         
           <li>
-            <a href="/2018/03/14/博客/">博客</a>
+            <a href="/2018/03/14/博客/">(no title)</a>
           </li>
         
       </ul>
