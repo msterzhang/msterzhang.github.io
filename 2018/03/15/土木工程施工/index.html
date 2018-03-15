@@ -5,16 +5,16 @@
   
   <title>土木工程施工 | Mster Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一.概述1.土方与基础工程习题应用案例:代码实现1.用于已知道垫层尺寸的土方挖方量计算：代码:#!/usr/bin/env python # -*- coding: utf-8 -*- # 用于已知道垫层尺寸的土方计算   def get_number():     # 输入相关参数     print(&amp;apos;欢迎使用土方计算程序 ---张某&amp;apos;)     print(80*&amp;apo">
+  <meta name="description" content="一.概述1.土方与基础工程习题应用案例:代码实现1.用于已知道垫层尺寸的土方挖方量计算：代码:#!/usr/bin/env python # -*- coding: utf-8 -*- # 用于已知道垫层尺寸的土方计算   def get_number():     print(80*&amp;apos;=)     # 输入相关参数     print(&amp;apos;欢迎使用土方计算程序 ---张某&amp;ap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="土木工程施工">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/土木工程施工/index.html">
 <meta property="og:site_name" content="Mster Blog">
-<meta property="og:description" content="一.概述1.土方与基础工程习题应用案例:代码实现1.用于已知道垫层尺寸的土方挖方量计算：代码:#!/usr/bin/env python # -*- coding: utf-8 -*- # 用于已知道垫层尺寸的土方计算   def get_number():     # 输入相关参数     print(&amp;apos;欢迎使用土方计算程序 ---张某&amp;apos;)     print(80*&amp;apo">
-<meta property="og:updated_time" content="2018-03-15T08:36:19.887Z">
+<meta property="og:description" content="一.概述1.土方与基础工程习题应用案例:代码实现1.用于已知道垫层尺寸的土方挖方量计算：代码:#!/usr/bin/env python # -*- coding: utf-8 -*- # 用于已知道垫层尺寸的土方计算   def get_number():     print(80*&amp;apos;=)     # 输入相关参数     print(&amp;apos;欢迎使用土方计算程序 ---张某&amp;ap">
+<meta property="og:updated_time" content="2018-03-15T09:45:15.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="土木工程施工">
-<meta name="twitter:description" content="一.概述1.土方与基础工程习题应用案例:代码实现1.用于已知道垫层尺寸的土方挖方量计算：代码:#!/usr/bin/env python # -*- coding: utf-8 -*- # 用于已知道垫层尺寸的土方计算   def get_number():     # 输入相关参数     print(&amp;apos;欢迎使用土方计算程序 ---张某&amp;apos;)     print(80*&amp;apo">
+<meta name="twitter:description" content="一.概述1.土方与基础工程习题应用案例:代码实现1.用于已知道垫层尺寸的土方挖方量计算：代码:#!/usr/bin/env python # -*- coding: utf-8 -*- # 用于已知道垫层尺寸的土方计算   def get_number():     print(80*&amp;apos;=)     # 输入相关参数     print(&amp;apos;欢迎使用土方计算程序 ---张某&amp;ap">
   
     <link rel="alternate" href="/atom.xml" title="Mster Blog" type="application/atom+xml">
   
@@ -91,17 +91,18 @@
 
 
 def get_number():
+    print(80*&apos;=)
     # 输入相关参数
     print(&apos;欢迎使用土方计算程序 ---张某&apos;)
     print(80*&apos;=&apos;)
     v_j = float(input(&apos;请输入基础体积(单位：m³)：&apos;))
     l = float(input(&apos;请输入垫层的长度(单位：m)：&apos;))
-    b = float(input(&apos;请输入垫层的宽(度单位：m)：&apos;))
+    b = float(input(&apos;请输入垫层的宽度(单位：m)：&apos;))
     h = float(input(&apos;请输入基坑深(单位：m)：&apos;))
     kp_1 = float(input(&apos;请输入可松性系数Kp：&apos;))
     kp_2 = float(input(&quot;请输入可松系数Kp&apos;：&quot;))
     f = float(input(&apos;请输入a+b+c的值(单位：m)：&apos;))
-    i = input(&apos;请输入放坡(如1：0.75，输入为1/0.75)：&apos;)
+    i = input(&apos;请输入放坡(如1:0.75，输入为1/0.75)：&apos;)
     i_find = float(i.strip(&apos;/&apos;)[2:])
 
     # 基坑相关面积计算
@@ -133,7 +134,7 @@ if __name__ == &apos;__main__&apos;:
 ================================================================================
 请输入基础体积(单位：m³)：1500
 请输入垫层的长度(单位：m)：50
-请输入垫层的宽(度单位：m)：30
+请输入垫层的宽度(单位：m)：30
 请输入基坑深(单位：m)：3
 请输入可松性系数Kp：1.2
 请输入可松系数Kp&apos;：1.03
@@ -145,11 +146,69 @@ if __name__ == &apos;__main__&apos;:
 运走的土量：1938 m³
 ================================================================================
 输入任意键结束计算
+</code></pre><h3 id="2-条形基坑土方计算"><a href="#2-条形基坑土方计算" class="headerlink" title="2.条形基坑土方计算"></a>2.条形基坑土方计算</h3><h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现:"></a>代码实现:</h4><pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# 用于已知道条形基础的土方计算
+
+
+def get_number():
+    print(80*&apos;=&apos;)
+    print(&apos;欢迎使用土方计算程序 ---张某&apos;)
+    print(80*&apos;=&apos;)
+    v_j = float(input(&apos;请输入基础体积(单位：m³)：&apos;))
+    l = float(input(&apos;请输入基坑的长度(单位：m)：&apos;))
+    b = float(input(&apos;请输入基坑的宽(单位：m)：&apos;))
+    h = float(input(&apos;请输入基坑深(单位：m)：&apos;))
+    kp_1 = float(input(&apos;请输入可松性系数Kp：&apos;))
+    kp_2 = float(input(&quot;请输入可松系数Kp&apos;：&quot;))
+    i = input(&apos;请输入放坡(如1：0.75，输入为1/0.75)：&apos;)
+    i_find = float(i.strip(&apos;/&apos;)[2:])
+
+    # 基坑相关面积计算
+    A_1 = 0.5*((b+2*i_find*h)+b)*h
+
+    # 基坑开挖量计算
+    v_1 = A_1*l
+    v_2 = v_1*kp_1
+    v_3 = v_1-v_j
+    v_1_1 = v_3/kp_2
+    v_2_2 = v_1_1*kp_1
+    v_s = v_2-v_2_2
+
+    # 打印结果
+    print(80*&apos;=&apos;)
+    print(&apos;计算结果&apos;)
+    print(&apos;土方开挖量：%d m³&apos; % v_1)
+    print(&apos;需要的填土量：%d m³&apos; % v_2_2)
+    print(&apos;运走的土量：%d m³&apos; % v_s)
+    print(80*&apos;=&apos;)
+    input(&apos;输入任意键结束计算&apos;)
+
+
+if __name__ == &apos;__main__&apos;:
+    get_number()
+</code></pre><h4 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出:"></a>结果输出:</h4><pre><code>================================================================================
+欢迎使用土方计算程序 ---张某
+================================================================================
+请输入基础体积(单位：m³)：234
+请输入基坑的长度(单位：m)：32
+请输入基坑的宽(单位：m)：1
+请输入基坑深(单位：m)：11
+请输入可松性系数Kp：1.3
+请输入可松系数Kp&apos;：1.03
+请输入放坡(如1：0.75，输入为1/0.75)：1/0.5
+================================================================================
+计算结果
+土方开挖量：2288 m³
+需要的填土量：2592 m³
+运走的土量：381 m³
+================================================================================
+输入任意键结束计算
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/15/土木工程施工/" data-id="cjes9guuw0000z0qqilcu2oco" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/15/土木工程施工/" data-id="cjesbwnq00000poqqqs0h394o" class="article-share-link">Share</a>
       
       
     </footer>
