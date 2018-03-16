@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://i.imgur.com/vreO706.jpg">
 <meta property="og:image" content="https://i.imgur.com/KaDRVGk.jpg">
 <meta property="og:image" content="https://i.imgur.com/HxcJUVK.jpg">
-<meta property="og:updated_time" content="2018-03-16T12:30:05.768Z">
+<meta property="og:updated_time" content="2018-03-16T12:31:13.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单Python爬虫">
 <meta name="twitter:description" content="一.相关库的使用教程 关于requests库的使用参见Requests官方文档。 re正则的使用教程   二.记一次app爬取,下载全站所以的游戏的安装包爬虫是指利用编程技术批量获取自己想要的网页上的数据，像把大象放进冰箱一样的简单，使用requests库来请求html，html通过浏览器解析，便得到美丽的界面了，其实还有css和javascript，这里就不做过多的介绍了，一个网站的爬取，重要">
@@ -59,9 +59,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -99,7 +99,7 @@
 </ul>
 <h2 id="二-记一次app爬取-下载全站所以的游戏的安装包"><a href="#二-记一次app爬取-下载全站所以的游戏的安装包" class="headerlink" title="二.记一次app爬取,下载全站所以的游戏的安装包"></a>二.记一次app爬取,下载全站所以的游戏的安装包</h2><h5 id="爬虫是指利用编程技术批量获取自己想要的网页上的数据，像把大象放进冰箱一样的简单，使用requests库来请求html，html通过浏览器解析，便得到美丽的界面了，其实还有css和javascript，这里就不做过多的介绍了，一个网站的爬取，重要的就是会分析原网站，分析url的规律，方便构造url去请求html。"><a href="#爬虫是指利用编程技术批量获取自己想要的网页上的数据，像把大象放进冰箱一样的简单，使用requests库来请求html，html通过浏览器解析，便得到美丽的界面了，其实还有css和javascript，这里就不做过多的介绍了，一个网站的爬取，重要的就是会分析原网站，分析url的规律，方便构造url去请求html。" class="headerlink" title="爬虫是指利用编程技术批量获取自己想要的网页上的数据，像把大象放进冰箱一样的简单，使用requests库来请求html，html通过浏览器解析，便得到美丽的界面了，其实还有css和javascript，这里就不做过多的介绍了，一个网站的爬取，重要的就是会分析原网站，分析url的规律，方便构造url去请求html。"></a><strong>爬虫</strong>是指利用编程技术批量获取自己想要的网页上的数据，像把大象放进冰箱一样的简单，使用requests库来请求<a href="https://baike.baidu.com/item/HTML" target="_blank" rel="noopener">html</a>，html通过浏览器解析，便得到美丽的界面了，其实还有<a href="https://baike.baidu.com/item/css/5457" target="_blank" rel="noopener">css</a>和<a href="https://baike.baidu.com/item/javascript" target="_blank" rel="noopener">javascript</a>，这里就不做过多的介绍了，一个网站的爬取，重要的就是会分析原网站，分析url的规律，方便构造url去请求html。</h5><h3 id="url的分析"><a href="#url的分析" class="headerlink" title="url的分析"></a>url的分析</h3><p>####1.首页的：<a href="http://ng.d.cn/channel/list_0_0_0_0_0_0_1_0.html?sort=0&amp;searchByEs=1&amp;keyword=" title="http://ng.d.cn/channel/list_0_0_0_0_0_0_1_0.html?sort=0&amp;searchByEs=1&amp;keyword=" target="_blank" rel="noopener">首页</a><br><img src="https://i.imgur.com/MPkCYBx.jpg" alt=""></p>
 <p>####2.尾页网页：<a href="http://ng.d.cn/channel/list_0_0_0_0_0_0_74_0.html?sort=0&amp;searchByEs=1&amp;keyword=" title="http://ng.d.cn/channel/list_0_0_0_0_0_0_74_0.html?sort=0&amp;searchByEs=1&amp;keyword=" target="_blank" rel="noopener">尾页</a><br><img src="https://i.imgur.com/xXYLH6x.jpg" alt=""></p>
-<h4 id="3-apk下载，通过抓包，我是用的是火狐浏览器，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的请求http-ng-d-cn-game-showDownLoad-html-timestamp-1521200568130-amp-channelid-1081-amp-osid-5B3-2C4-5D。"><a href="#3-apk下载，通过抓包，我是用的是火狐浏览器，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的请求http-ng-d-cn-game-showDownLoad-html-timestamp-1521200568130-amp-channelid-1081-amp-osid-5B3-2C4-5D。" class="headerlink" title="3.apk下载，通过抓包，我是用的是火狐浏览器，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的请求http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D。"></a>3.apk下载，通过抓包，我是用的是<a href="http://www.firefox.com.cn/download/" target="_blank" rel="noopener">火狐浏览器</a>，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的<a href="http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D" target="_blank" rel="noopener">请求</a><a href="http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D。" target="_blank" rel="noopener">http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D。</a></h4><p><img src="https://i.imgur.com/vreO706.jpg" alt="">选择这个请求，右键新建便签打开我们发现这是一个json文件.<img src="https://i.imgur.com/KaDRVGk.jpg" alt="">我们要找的apk链接就在里面，单击一下url就知道啦， 其中1081是个可疑的参数的如下图!,复制它，右键查看网页源代码<em>，Ctrl+F</em>查找，输入1081看到了吧<img src="https://i.imgur.com/HxcJUVK.jpg" alt=""></p>
+<h4 id="3-apk下载，通过抓包，我是用的是火狐浏览器，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的请求http-ng-d-cn-game-showDownLoad-html-timestamp-1521200568130-amp-channelid-1081-amp-osid-5B3-2C4-5D。"><a href="#3-apk下载，通过抓包，我是用的是火狐浏览器，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的请求http-ng-d-cn-game-showDownLoad-html-timestamp-1521200568130-amp-channelid-1081-amp-osid-5B3-2C4-5D。" class="headerlink" title="3.apk下载，通过抓包，我是用的是火狐浏览器，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的请求http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D。"></a>3.apk下载，通过抓包，我是用的是<a href="http://www.firefox.com.cn/download/" target="_blank" rel="noopener">火狐浏览器</a>，右键查看元素，点击网络，点击XHR，准备开始抓包，点击游戏下载的下载按钮，我们可以看到浏览器发送的<a href="http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D" target="_blank" rel="noopener">请求</a><a href="http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D。" target="_blank" rel="noopener">http://ng.d.cn/game/showDownLoad.html?timestamp=1521200568130&amp;channelid=1081&amp;osid=%5B3%2C4%5D。</a></h4><p><img src="https://i.imgur.com/vreO706.jpg" alt="">选择这个请求，右键新建便签打开我们发现这是一个json文件。<br><img src="https://i.imgur.com/KaDRVGk.jpg" alt="">我们要找的apk链接就在里面，单击一下url就知道啦， 其中1081是个可疑的参数的如下图!,复制它，右键查看网页源代码<em>，Ctrl+F</em>查找，输入1081看到了吧<img src="https://i.imgur.com/HxcJUVK.jpg" alt=""></p>
 <p>###三.分析完网站的规律，开始写代码把，下面我们通过代码构造url<br>    for i in range(1,76):<br>        url = ‘<a href="http://ng.d.cn/channel/list_0_0_0_0_0_0_{}_0.html?sort=0&amp;searchByEs=1&amp;keyword=&#39;.format(i)" target="_blank" rel="noopener">http://ng.d.cn/channel/list_0_0_0_0_0_0_{}_0.html?sort=0&amp;searchByEs=1&amp;keyword=&#39;.format(i)</a></p>
 <pre><code># 打印出来看看就知道啦
 print(url)
@@ -160,7 +160,7 @@ if __name__ == &apos;__main__&apos;:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/15/简单Python爬虫/" data-id="cjetx8m6a0000d8qqgp86lqsf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/15/简单Python爬虫/" data-id="cjetxa7tf0001fgqqbxl9osgx" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -170,7 +170,7 @@ if __name__ == &apos;__main__&apos;:
 <nav id="article-nav">
   
     <a href="/2018/03/15/土木工程施工/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           土木工程施工
@@ -208,7 +208,7 @@ if __name__ == &apos;__main__&apos;:
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -233,7 +233,7 @@ if __name__ == &apos;__main__&apos;:
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Mster Zhang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
