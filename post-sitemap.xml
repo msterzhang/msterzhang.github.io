@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/03/17/%E8%BF%85%E9%9B%B79%E7%A0%B4%E8%A7%A3%E7%89%88/</loc>
+        <lastmod>2018-03-17T12:54:11.446Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/03/17/%E9%BA%A6%E5%BD%93%E5%8A%B3%E6%82%AC%E7%96%91%E7%9F%AD%E7%89%87%E3%80%8A%E8%B7%9F%E8%B8%AA%E3%80%8B/</loc>
         <lastmod>2018-03-17T12:19:59.404Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,14 +49,6 @@
     <url>
         <loc>http://yoursite.com/2018/03/17/PotPlayer-1-7-9494-%E7%BB%BF%E8%89%B2%E7%BA%AF%E5%87%80%E7%89%88/</loc>
         <lastmod>2018-03-17T02:34:17.937Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/03/17/%E8%BF%85%E9%9B%B79%E7%A0%B4%E8%A7%A3%E7%89%88/</loc>
-        <lastmod>2018-03-17T02:33:47.664Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
