@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/03/15/%E7%AE%80%E5%8D%95Python%E7%88%AC%E8%99%AB/</loc>
+        <lastmod>2018-03-17T15:15:18.117Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/03/17/PotPlayer-1-7-9494-%E7%BB%BF%E8%89%B2%E7%BA%AF%E5%87%80%E7%89%88/</loc>
         <lastmod>2018-03-17T15:03:06.855Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +41,6 @@
     <url>
         <loc>http://yoursite.com/2018/03/17/%E9%BA%A6%E5%BD%93%E5%8A%B3%E6%82%AC%E7%96%91%E7%9F%AD%E7%89%87%E3%80%8A%E8%B7%9F%E8%B8%AA%E3%80%8B/</loc>
         <lastmod>2018-03-17T12:19:59.404Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/03/15/%E7%AE%80%E5%8D%95Python%E7%88%AC%E8%99%AB/</loc>
-        <lastmod>2018-03-17T11:52:15.385Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
