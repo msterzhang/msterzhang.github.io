@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-17T00:42:36.471Z</updated>
+  <updated>2018-03-17T01:36:25.040Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>手机迅雷v5.46.2.5100去广告版</title>
+    <link href="http://yoursite.com/2018/03/17/%E6%89%8B%E6%9C%BA%E8%BF%85%E9%9B%B7v5-46-2-5100%E5%8E%BB%E5%B9%BF%E5%91%8A%E7%89%88/"/>
+    <id>http://yoursite.com/2018/03/17/手机迅雷v5-46-2-5100去广告版/</id>
+    <published>2018-03-17T01:28:35.000Z</published>
+    <updated>2018-03-17T01:36:25.040Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="手机迅雷v5-46-2-5100去广告版，无需会员直接进入加速"><a href="#手机迅雷v5-46-2-5100去广告版，无需会员直接进入加速" class="headerlink" title="手机迅雷v5.46.2.5100去广告版，无需会员直接进入加速"></a>手机迅雷v5.46.2.5100去广告版，无需会员直接进入加速</h3><p><strong>手机迅雷</strong>：一款下载软件，是中国第一下载品牌“迅雷”在手机上的延伸，拥有4亿迅雷用户为手机下载加速护航，软件特点有个性定制、免费在线云播、自定义下载路径等。全球用户下载工具，十年下载技术积淀，打造专业的极速下载体验！边下载边播放，播放视频从此无需等待，只为给您提供超凡的视听效果！去广告版本由<strong>望雪、SOLDIER</strong>等大神修改，去除有料视频、女神直播等无用功能，去除下载界面广告，只保留了下载功能，可以当作一款下载软件使用，但是多了迅雷强大的加速功能。</p><p><img src="https://i.imgur.com/itEd4Om.png" alt=""></p><h3 id="更新日志："><a href="#更新日志：" class="headerlink" title="更新日志："></a>更新日志：</h3><ul><li>1.优化启动性能，大幅缩短启动时长</li><li>2.等待下载时，下载管理也能查看精彩内容了</li><li>3.收藏支持帐号同步，记录永不丢失</li><li>4.播放器支持拉伸缩放，畅享全屏观看</li></ul><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>*<a href="https://pan.baidu.com/s/1JQLp_hy8SzH21a-0C95iKA" target="_blank" rel="noopener">下载链接</a>: <a href="https://pan.baidu.com/s/1JQLp_hy8SzH21a-0C95iKA" target="_blank" rel="noopener">https://pan.baidu.com/s/1JQLp_hy8SzH21a-0C95iKA</a> 密码: mi5s</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;手机迅雷v5-46-2-5100去广告版，无需会员直接进入加速&quot;&gt;&lt;a href=&quot;#手机迅雷v5-46-2-5100去广告版，无需会员直接进入加速&quot; class=&quot;headerlink&quot; title=&quot;手机迅雷v5.46.2.5100去广告版，无需会员直接进入加
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>编程笔记</title>
@@ -35,7 +56,7 @@
     <link href="http://yoursite.com/2018/03/15/%E5%9C%9F%E6%9C%A8%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5/"/>
     <id>http://yoursite.com/2018/03/15/土木工程施工/</id>
     <published>2018-03-15T05:21:06.000Z</published>
-    <updated>2018-03-17T00:49:38.734Z</updated>
+    <updated>2018-03-17T00:54:15.747Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://p17.qhimg.com/t015fc939363fca514c.jpg" alt=""></p><h1 id="一-概述"><a href="#一-概述" class="headerlink" title="一.概述"></a>一.概述</h1><h2 id="1-土方与基础工程"><a href="#1-土方与基础工程" class="headerlink" title="1.土方与基础工程"></a>1.土方与基础工程</h2><h3 id="习题应用案例"><a href="#习题应用案例" class="headerlink" title="习题应用案例:"></a>习题应用案例:</h3><h3 id="1-用于已知道垫层尺寸的土方挖方量计算："><a href="#1-用于已知道垫层尺寸的土方挖方量计算：" class="headerlink" title="1.用于已知道垫层尺寸的土方挖方量计算："></a>1.用于已知道垫层尺寸的土方挖方量计算：</h3><h4 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h4><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-# 用于已知道垫层尺寸的土方计算def get_number():    print(80*&apos;=)    # 输入相关参数    print(&apos;欢迎使用土方计算程序 ---张某&apos;)    print(80*&apos;=&apos;)    v_j = float(input(&apos;请输入基础体积(单位：m³)：&apos;))    l = float(input(&apos;请输入垫层的长度(单位：m)：&apos;))    b = float(input(&apos;请输入垫层的宽度(单位：m)：&apos;))    h = float(input(&apos;请输入基坑深(单位：m)：&apos;))    kp_1 = float(input(&apos;请输入可松性系数Kp：&apos;))    kp_2 = float(input(&quot;请输入可松系数Kp&apos;：&quot;))    f = float(input(&apos;请输入a+b+c的值(单位：m)：&apos;))    i = input(&apos;请输入放坡(如1:0.75，输入为1/0.75)：&apos;)    i_find = float(i.strip(&apos;/&apos;)[2:])    # 基坑相关面积计算    A_1 = (b+2*(f+i_find*h))*(l+2*(f+i_find*h))    A_2 = (b+2*f)*(l+2*f)    A_0 = (b+2*(f+0.5*i_find*h))*(l+2*(f+0.5*i_find*h))    # 基坑开挖量计算    v_1 = h*(A_1+A_2+4*A_0)/6    v_2 = v_1*kp_1    v_3 = v_1-v_j    v_1_1 = v_3/kp_2    v_2_2 = v_1_1*kp_1    v_s = v_2-v_2_2    # 打印结果    print(80*&apos;=&apos;)    print(&apos;土方开挖量：%d m³&apos; % v_1)    print(&apos;需要的填土量：%d m³&apos; % v_2_2)    print(&apos;运走的土量：%d m³&apos; % v_s)    print(80*&apos;=&apos;)    input(&apos;输入任意键结束计算&apos;)if __name__ == &apos;__main__&apos;:    get_number()</code></pre><h4 id="结果输出："><a href="#结果输出：" class="headerlink" title="结果输出："></a>结果输出：</h4><blockquote></blockquote><pre><code>欢迎使用土方计算程序 ---张某================================================================================请输入基础体积(单位：m³)：1500请输入垫层的长度(单位：m)：50请输入垫层的宽度(单位：m)：30请输入基坑深(单位：m)：3请输入可松性系数Kp：1.2请输入可松系数Kp&apos;：1.03请输入a+b+c的值(单位：m)：0.8请输入放坡(如1：0.75，输入为1/0.75)：1/0.75================================================================================土方开挖量：5473 m³需要的填土量：4629 m³运走的土量：1938 m³================================================================================输入任意键结束计算</code></pre><h3 id="2-条形基坑土方计算"><a href="#2-条形基坑土方计算" class="headerlink" title="2.条形基坑土方计算"></a>2.条形基坑土方计算</h3><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码:"></a>代码:</h4><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-# 用于已知道条形基础的土方计算def get_number():    print(80*&apos;=&apos;)    print(&apos;欢迎使用土方计算程序 ---张某&apos;)    print(80*&apos;=&apos;)    v_j = float(input(&apos;请输入基础体积(单位：m³)：&apos;))    l = float(input(&apos;请输入基坑的长度(单位：m)：&apos;))    b = float(input(&apos;请输入基坑的宽(单位：m)：&apos;))    h = float(input(&apos;请输入基坑深(单位：m)：&apos;))    kp_1 = float(input(&apos;请输入可松性系数Kp：&apos;))    kp_2 = float(input(&quot;请输入可松系数Kp&apos;：&quot;))    i = input(&apos;请输入放坡(如1：0.75，输入为1/0.75)：&apos;)    i_find = float(i.strip(&apos;/&apos;)[2:])    # 基坑相关面积计算    A_1 = 0.5*((b+2*i_find*h)+b)*h    # 基坑开挖量计算    v_1 = A_1*l    v_2 = v_1*kp_1    v_3 = v_1-v_j    v_1_1 = v_3/kp_2    v_2_2 = v_1_1*kp_1    v_s = v_2-v_2_2    # 打印结果    print(80*&apos;=&apos;)    print(&apos;计算结果:&apos;)    print(&apos;土方开挖量：%d m³&apos; % v_1)    print(&apos;需要的填土量：%d m³&apos; % v_2_2)    print(&apos;运走的土量：%d m³&apos; % v_s)    print(80*&apos;=&apos;)    input(&apos;输入任意键结束计算&apos;)if __name__ == &apos;__main__&apos;:    get_number()</code></pre><h4 id="结果输出"><a href="#结果输出" class="headerlink" title="结果输出:"></a>结果输出:</h4><pre><code>================================================================================欢迎使用土方计算程序 ---张某================================================================================请输入基础体积(单位：m³)：234请输入基坑的长度(单位：m)：32请输入基坑的宽(单位：m)：1请输入基坑深(单位：m)：11请输入可松性系数Kp：1.3请输入可松系数Kp&apos;：1.03请输入放坡(如1：0.75，输入为1/0.75)：1/0.5================================================================================计算结果:土方开挖量：2288 m³需要的填土量：2592 m³运走的土量：381 m³================================================================================输入任意键结束计算</code></pre>]]></content>
     
