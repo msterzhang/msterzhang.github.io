@@ -1,0 +1,56 @@
+body{
+	/*background-color: black;*/
+	background-image: url("http://p16.qhimg.com/t0149c80250fdb34e2e.jpg");
+	background-position: 100% 100%; 
+}
+
+canvas {
+    display: block;
+    margin: 50px auto;
+    box-shadow: -2px -2px 2px #000000, 2px 2px 2px #000000;
+}
+
+header{
+    display:block;
+    margin:0 auto;
+    width:100%;
+    text-align:center;
+}
+
+header h1{
+    font-family:Arial;
+    font-size:40px;
+    font-weight:bold;
+    margin:0 auto;
+    max-width: 600px;
+}
+
+header #newgamebutton{
+    display:block;
+    margin:20px auto;
+
+    width:100px;
+    padding:10px 10px;
+    background-color:#000000;
+
+    font-family:Arial;
+    color:white;
+
+    border-radius:10px;
+    text-decoration:none;
+}
+header #newgamebutton:hover{
+    background-color:#9f8b77;
+}
+
+header p{
+    font-family:Arial;
+    font-size:25px;
+    margin:10px auto;
+}
+footer{
+     display:block;
+     margin:0 auto;
+     width:100%;
+     text-align:center;
+}
