@@ -1,0 +1,20 @@
+
+.mvs ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.mvs li{
+	float:left;
+    margin:20px 4% 0 0;
+	width:30%;
+	height:400px;
+	}
+li:nth-child(3n){margin-right:0;}
+search-works-list clearfix{
+	margin-left: -30px;
+	margin-top: -30px;
+}

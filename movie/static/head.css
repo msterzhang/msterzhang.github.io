@@ -1,0 +1,46 @@
+/*清除默认样式*/
+body,div,ol,dl,dt,dd,h1,h3,h4,h5,h6,p,form,fieldset,legend,input{ margin:0; padding:0;}
+h1,h3,h4,h5,h6{ font-size:100%; font-weight:normal;}
+ol,ul{ list-style:none;}
+img,fieldset{ border:0 none; display:block;}
+
+nav{
+  background-color: white;
+  padding: 1%;
+}
+
+nav {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  padding: 0;
+  height:50px;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+  height:50px;
+  line-height:50px;
+}
+nav a {
+
+  font-size:35px;
+  line-height:50px;
+  display: inline-block;
+  font-size:3rem
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+nav{
+	background-color:black;
+}
