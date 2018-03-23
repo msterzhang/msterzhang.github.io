@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-23T04:59:05.745Z</updated>
+  <updated>2018-03-23T05:02:01.191Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/03/23/%E7%94%A8%E4%B8%AD%E6%96%87%E5%86%99python%E4%BB%A3%E7%A0%81/"/>
     <id>http://yoursite.com/2018/03/23/用中文写python代码/</id>
     <published>2018-03-23T04:49:56.000Z</published>
-    <updated>2018-03-23T04:59:05.745Z</updated>
+    <updated>2018-03-23T05:02:01.191Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。"><a href="#作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。" class="headerlink" title="作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。"></a>作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。</h2><p><img src="https://i.imgur.com/lbS0aze.jpg" alt=""></p><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><pre><code># encoding=utf-8from inspect import getframeinfo, currentframeclass 我的类(object):    def 呐喊吧(我自己):        我自己.钱 = int(input(&apos;我有多少钱：&apos;))        if 我自己.钱 &gt; 6:            print(&apos;买西瓜&apos;)        elif 我自己.钱 &gt; 5:            print(&apos;买橘子&apos;)        else:            print(&apos;买不起,回去搬砖&apos;)我的变量 = 我的类()我的变量.呐喊吧()</code></pre><h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><pre><code>我有多少钱：7买西瓜进程已结束,退出代码0</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。"><a href="#作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。" class="headerlink" title="作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。"></a>作为一个程序员，可能大部分人只知道只有易语言使用中文编程，其实不然，python语言也可以使用python编程，话不多说，上图。</h2><p><img src="https://i.imgur.com/lbS0aze.jpg" alt=""></p><h3 id="注意-请使用python3-x的版本实验"><a href="#注意-请使用python3-x的版本实验" class="headerlink" title="注意:请使用python3.x的版本实验"></a>注意:请使用python3.x的版本实验</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><pre><code># encoding=utf-8from inspect import getframeinfo, currentframeclass 我的类(object):    def 呐喊吧(我自己):        我自己.钱 = int(input(&apos;我有多少钱：&apos;))        if 我自己.钱 &gt; 6:            print(&apos;买西瓜&apos;)        elif 我自己.钱 &gt; 5:            print(&apos;买橘子&apos;)        else:            print(&apos;买不起,回去搬砖&apos;)我的变量 = 我的类()我的变量.呐喊吧()</code></pre><h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><pre><code>我有多少钱：7买西瓜进程已结束,退出代码0</code></pre>]]></content>
     
     <summary type="html">
     
