@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-23T08:03:01.289Z</updated>
+  <updated>2018-03-23T08:06:17.811Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/03/23/%E8%8E%B7%E5%8F%96mp3%E9%95%BF%E5%BA%A6/"/>
     <id>http://yoursite.com/2018/03/23/获取mp3长度/</id>
     <published>2018-03-23T07:33:00.000Z</published>
-    <updated>2018-03-23T08:03:01.289Z</updated>
+    <updated>2018-03-23T08:06:17.811Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://p15.qhimg.com/t016543f47973eb50ae.jpg" alt=""></p><hr><h1 id="这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人"><a href="#这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人" class="headerlink" title="这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人"></a>这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人</h1><hr><p>注意：使用过程中如果报错以下错，请重新安装<a href="https://pypi.python.org/pypi/python-magic-bin/0.4.14" target="_blank" rel="noopener">python-magic-bin</a></p><pre><code>It is better to raise an ImportError since we are importing magic module raiseImportError(&apos;failed to find libmagic.  Check your installation&apos;)</code></pre><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code># encoding=utf-8import requestsimport pygameimport timeimport eyed3# 播放的话需要设置歌曲名为非中文path = &apos;music.mp3&apos;# 转为音频文件def get_mp3():    text = &apos;&apos;&apos;    央视网消息：近期，中央政治局同志首次向党中央和习近平总书记书面述职，这是他们履新近半年来交的首份答卷。习近平认真审阅了中央政治局同志的述职报告，并就中央政治局同志履行职责、做好工作、改进作风提出重要要求。    &apos;&apos;&apos;    url = &apos;https://tts.baidu.com/text2audio?cuid=baiduid&amp;lan=zh&amp;ctp=1&amp;pdt=311&amp;spd=6&amp;tex=&apos;+text    find = requests.get(url)    with open(path,&apos;wb&apos;) as f:        f.write(find.content)        f.close()# 播放音频def player():    pygame.mixer.init()    print(&quot;播放音乐&quot;)    pygame.mixer.music.load(path)    xx = eyed3.load(path)    music_time = xx.info.time_secs    pygame.mixer.music.play()    time.sleep(music_time)    pygame.mixer.music.stop()if __name__ == &apos;__main__&apos;:    get_mp3()    player()</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://p15.qhimg.com/t016543f47973eb50ae.jpg" alt=""></p><hr><h1 id="这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人"><a href="#这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人" class="headerlink" title="这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人"></a>这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人</h1><hr><p>注意：使用过程中如果报错以下错，请重新安装<a href="https://pypi.python.org/pypi/python-magic-bin/0.4.14" target="_blank" rel="noopener">python-magic-bin</a></p><pre><code>It is better to raise an ImportError since we are importing magic module raiseImportError(&apos;failed to find libmagic.  Check your installation&apos;)</code></pre><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code># encoding=utf-8import requestsimport pygameimport timeimport eyed3# 使用pygame播放的话需要设置歌曲名为非中文，使用如网易云这类的播放器就不用管这个path = &apos;music.mp3&apos;# 转为音频文件def get_mp3():    text = &apos;&apos;&apos;    央视网消息：近期，中央政治局同志首次向党中央和习近平总书记书面述职，这是他们履新近半年来交的首份答卷。习近平认真审阅了中央政治局同志的述职报告，并就中央政治局同志履行职责、做好工作、改进作风提出重要要求。    &apos;&apos;&apos;    url = &apos;https://tts.baidu.com/text2audio?cuid=baiduid&amp;lan=zh&amp;ctp=1&amp;pdt=311&amp;spd=6&amp;tex=&apos;+text    find = requests.get(url)    with open(path,&apos;wb&apos;) as f:        f.write(find.content)        f.close()# 播放音频def player():    pygame.mixer.init()    print(&quot;播放音乐&quot;)    pygame.mixer.music.load(path)    xx = eyed3.load(path)    music_time = xx.info.time_secs    pygame.mixer.music.play()    time.sleep(music_time)    pygame.mixer.music.stop()if __name__ == &apos;__main__&apos;:    get_mp3()    player()</code></pre>]]></content>
     
     <summary type="html">
     
