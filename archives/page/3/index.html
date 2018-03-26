@@ -3,21 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>音乐添加标签 | Mster Blog</title>
+  <title>Archives | Mster Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个音频处理库，在命令行中查看歌曲信息 官方地址:http://eyed3.readthedocs.io/en/latest/  $ eyeD3 song.mp3 song.mp3      [ 3.06 MB ] ------------------------------------------------------------------------- ID3 v2.4: title:">
-<meta property="og:type" content="article">
-<meta property="og:title" content="音乐添加标签">
-<meta property="og:url" content="http://yoursite.com/2018/03/23/音乐添加标签/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Mster Blog">
+<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
 <meta property="og:site_name" content="Mster Blog">
-<meta property="og:description" content="一个音频处理库，在命令行中查看歌曲信息 官方地址:http://eyed3.readthedocs.io/en/latest/  $ eyeD3 song.mp3 song.mp3      [ 3.06 MB ] ------------------------------------------------------------------------- ID3 v2.4: title:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p17.qhimg.com/t01f808b99bc2015a64.jpg">
-<meta property="og:updated_time" content="2018-03-23T08:02:42.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="音乐添加标签">
-<meta name="twitter:description" content="一个音频处理库，在命令行中查看歌曲信息 官方地址:http://eyed3.readthedocs.io/en/latest/  $ eyeD3 song.mp3 song.mp3      [ 3.06 MB ] ------------------------------------------------------------------------- ID3 v2.4: title:">
-<meta name="twitter:image" content="http://p17.qhimg.com/t01f808b99bc2015a64.jpg">
+<meta name="twitter:title" content="Mster Blog">
   
     <link rel="alternate" href="/atom.xml" title="Mster Blog" type="application/atom+xml">
   
@@ -79,86 +73,44 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-音乐添加标签" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/23/音乐添加标签/" class="article-date">
-  <time datetime="2018-03-23T07:25:40.000Z" itemprop="datePublished">2018-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      音乐添加标签
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2018/03/15/简单Python爬虫/" class="archive-article-date">
+  <time datetime="2018-03-15T05:14:52.000Z" itemprop="datePublished">Mar 15</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/15/简单Python爬虫/">简单Python爬虫</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://p17.qhimg.com/t01f808b99bc2015a64.jpg" alt=""></p>
-<hr>
-<h2 id="一个音频处理库，在命令行中查看歌曲信息"><a href="#一个音频处理库，在命令行中查看歌曲信息" class="headerlink" title="一个音频处理库，在命令行中查看歌曲信息"></a>一个音频处理库，在命令行中查看歌曲信息</h2><blockquote>
-<p>官方地址:<a href="http://eyed3.readthedocs.io/en/latest/" target="_blank" rel="noopener">http://eyed3.readthedocs.io/en/latest/</a></p>
-</blockquote>
-<pre><code>$ eyeD3 song.mp3
-song.mp3      [ 3.06 MB ]
--------------------------------------------------------------------------
-ID3 v2.4:
-title: Hollow
-artist: Integrity
-album: Humanity Is The Devil
-album artist: None
-track: 2
--------------------------------------------------------------------------
-</code></pre><h2 id="在Python中使用eyeD3"><a href="#在Python中使用eyeD3" class="headerlink" title="在Python中使用eyeD3"></a>在Python中使用eyeD3</h2><pre><code>import eyed3
-
-audiofile = eyed3.load(&quot;song.mp3&quot;)
-audiofile.tag.artist = u&quot;Integrity&quot;
-audiofile.tag.album = u&quot;Humanity Is The Devil&quot;
-audiofile.tag.album_artist = u&quot;Integrity&quot;
-audiofile.tag.title = u&quot;Hollow&quot;
-audiofile.tag.track_num = 2
-
-audiofile.tag.save()
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/音乐添加标签/" data-id="cjf87n4dz000bagqqxy9n30uh" class="article-share-link">Partager</a>
-      
-      
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2018/03/23/获取mp3长度/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          文本转音频并自动播放
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/03/23/用中文写python代码/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
-      <div class="article-nav-title">用中文写python代码</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; __('prev')</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 </section>
         
           <aside id="sidebar">
