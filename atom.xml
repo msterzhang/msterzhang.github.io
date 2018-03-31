@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-31T11:06:16.559Z</updated>
+  <updated>2018-03-31T11:42:32.120Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://yoursite.com/2018/03/31/django%E9%85%8D%E7%BD%AEmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>http://yoursite.com/2018/03/31/django配置mysql数据库问题解决/</id>
     <published>2018-03-31T10:51:40.000Z</published>
-    <updated>2018-03-31T11:06:16.559Z</updated>
+    <updated>2018-03-31T11:42:32.120Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Django中Mysql的配置"><a href="#Django中Mysql的配置" class="headerlink" title="Django中Mysql的配置"></a>Django中Mysql的配置</h1><h1 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h1><pre><code># https://docs.djangoproject.com/en/1.10/ref/settings/#databases# 原有sqlite3数据库&apos;&apos;&apos;DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,        &apos;NAME&apos;: os.path.join(BASE_DIR, &apos;db.sqlite3&apos;),    }}&apos;&apos;&apos;# 更改为Mysql数据库DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,        &apos;NAME&apos;: &apos;数据库名字&apos;,        &apos;USER&apos;: &apos;账号&apos;,        &apos;PASSWORD&apos;: &apos;密码&apos;,        &apos;HOST&apos;: &apos;127.0.0.1&apos;,        &apos;PORT&apos;: &apos;3306&apos;,        &apos;CHARSET&apos;:&apos;utf8&apos;,    }}</code></pre><h1 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql__init__.py,输入</p></blockquote><pre><code>import pymysqlpymysql.install_as_MySQLdb()</code></pre><h1 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql\base.py，注释掉这面这段代码</p></blockquote><pre><code>version = Database.version_info# 注释掉这面这段代码&apos;&apos;&apos;if version &lt; (1, 3, 3):raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)&apos;&apos;&apos;</code></pre>]]></content>
+    <content type="html"><![CDATA[<h1 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h1><pre><code># https://docs.djangoproject.com/en/1.10/ref/settings/#databases# 原有sqlite3数据库&apos;&apos;&apos;DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,        &apos;NAME&apos;: os.path.join(BASE_DIR, &apos;db.sqlite3&apos;),    }}&apos;&apos;&apos;# 更改为Mysql数据库DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,        &apos;NAME&apos;: &apos;数据库名字&apos;,        &apos;USER&apos;: &apos;账号&apos;,        &apos;PASSWORD&apos;: &apos;密码&apos;,        &apos;HOST&apos;: &apos;127.0.0.1&apos;,        &apos;PORT&apos;: &apos;3306&apos;,        &apos;CHARSET&apos;:&apos;utf8&apos;,    }}</code></pre><h1 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql__init__.py,输入</p></blockquote><pre><code>import pymysqlpymysql.install_as_MySQLdb()</code></pre><h1 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql\base.py，注释掉这面这段代码</p></blockquote><pre><code>version = Database.version_info# 注释掉这面这段代码&apos;&apos;&apos;if version &lt; (1, 3, 3):raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)&apos;&apos;&apos;</code></pre>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Django中Mysql的配置&quot;&gt;&lt;a href=&quot;#Django中Mysql的配置&quot; class=&quot;headerlink&quot; title=&quot;Django中Mysql的配置&quot;&gt;&lt;/a&gt;Django中Mysql的配置&lt;/h1&gt;&lt;h1 id=&quot;第一步：&quot;&gt;&lt;a href
+        &lt;h1 id=&quot;第一步：&quot;&gt;&lt;a href=&quot;#第一步：&quot; class=&quot;headerlink&quot; title=&quot;第一步：&quot;&gt;&lt;/a&gt;第一步：&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;# https://docs.djangoproject.com/en/1.10/ref/settings/
       
     
     </summary>
