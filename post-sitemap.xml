@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/03/31/django%E9%85%8D%E7%BD%AEmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+        <lastmod>2018-03-31T11:06:16.559Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/03/26/%E9%92%A2%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2018-03-26T14:21:03.259Z</lastmod>
         <changefreq>weekly</changefreq>
