@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-31T13:20:51.739Z</updated>
+  <updated>2018-04-01T12:29:01.149Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>爬虫库requests-html</title>
+    <link href="http://yoursite.com/2018/04/01/requests-html/"/>
+    <id>http://yoursite.com/2018/04/01/requests-html/</id>
+    <published>2018-04-01T13:21:06.000Z</published>
+    <updated>2018-04-01T12:29:01.149Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="爬虫库requests-html"><a href="#爬虫库requests-html" class="headerlink" title="爬虫库requests-html"></a>爬虫库requests-html</h1><blockquote><p>一个集下载html，解析HTML，执行javascript文件的爬虫库<a href="https://github.com/kennethreitz/requests-html" target="_blank" rel="noopener">requests-html</a>，来自requests库作者kennethreitz的最新作品 </p></blockquote><h2 id="强大功能："><a href="#强大功能：" class="headerlink" title="强大功能："></a>强大功能：</h2><ul><li>自动执行js文件</li><li>支持css选择器</li><li>支持xpath选择 </li><li>更多强大功能点这里<a href="https://github.com/kennethreitz/requests-html" target="_blank" rel="noopener">requests-html</a></li></ul><h3 id="注意：这个库目前只支持python3-6"><a href="#注意：这个库目前只支持python3-6" class="headerlink" title="注意：这个库目前只支持python3.6"></a>注意：这个库目前只支持python3.6</h3><h1 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h1><pre><code>pip install requests-html</code></pre><h1 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h1><blockquote><p>这里使用<a href="http://jandan.net/ooxx" target="_blank" rel="noopener">煎蛋</a>做教程，主要是因为他的图片链接是通过js动态加载的，望大家不要过分请求，以免给人家服务器造成过大的压力，可以帮忙点点广告</p></blockquote><h1 id="网站分析"><a href="#网站分析" class="headerlink" title="网站分析:"></a>网站分析:</h1><h3 id="请对比这两张图，你会发现在网站源码html里面是完全没有图片链接的"><a href="#请对比这两张图，你会发现在网站源码html里面是完全没有图片链接的" class="headerlink" title="请对比这两张图，你会发现在网站源码html里面是完全没有图片链接的"></a>请对比这两张图，你会发现在网站源码html里面是完全没有图片链接的</h3><p>图1：</p><p><img src="https://i.imgur.com/OVoGPP4.jpg" alt=""></p><p>图2：</p><p><img src="https://i.imgur.com/3oita9E.jpg" alt=""></p><h1 id="执行js代码"><a href="#执行js代码" class="headerlink" title="执行js代码:"></a>执行js代码:</h1><pre><code>r.html.render()</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code>#!/usr/bin/env python# -*- coding: utf-8 -*-import refrom requests_html import HTMLSessionsession = HTMLSession()def get_img():    r = session.get(&apos;http://jandan.net/ooxx&apos;)    r.html.render()    html = r.html.html    img_list = re.findall(&apos;img src=&quot;(.*?)&quot; style=&quot;max-width: 480px; &apos;,html)    for img_url in img_list:        print(img_url)if __name__ == &apos;__main__&apos;:    get_img()</code></pre><h1 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h1><pre><code>C:\Users\Administrator\AppData\Local\Programs\Python\Python36\python.exe E:/python/django项目/视频网站/wbmovies/movie/serch.pyhttp://wx3.sinaimg.cn/mw600/0076BSS5ly1fpxdr12bimj30u00u04qp.jpghttp://ws3.sinaimg.cn/mw600/006HcaCrgy1fpxdpqik3mj30f80nj75d.jpghttp://wx2.sinaimg.cn/mw600/0076BSS5ly1fpxdfmxo9oj30mt0zk782.jpghttp://wx1.sinaimg.cn/mw600/0076BSS5ly1fpxd4qinppj30wi0uktdw.jpghttp://wx1.sinaimg.cn/mw600/0076BSS5ly1fpxctm4ll3j30to18ggsi.jpghttp://wx2.sinaimg.cn/mw600/0076BSS5ly1fpxci8mj6vj30zk1h3apc.jpghttp://wx2.sinaimg.cn/mw600/0076BSS5ly1fpxc63o1swj30jg0sxn1t.jpghttp://wx4.sinaimg.cn/mw600/661eb95cgy1fpp9jrhd7tj20pe112wkv.jpghttp://wx2.sinaimg.cn/mw600/0076BSS5ly1fpxbut616uj30tm18gtey.jpghttp://ws2.sinaimg.cn/mw600/006qNvZ7gy1fpxbm8sdkjj30o00w0tor.jpghttp://wx4.sinaimg.cn/mw600/0076BSS5ly1fpxbj79g8aj30g00sgdh2.jpghttp://wx4.sinaimg.cn/mw600/0076BSS5ly1fpxb71d1l8j30ia0w60xl.jpghttp://wx4.sinaimg.cn/mw600/0076BSS5ly1fpxavgcx6mj30uk0jjq85.jpghttp://wx2.sinaimg.cn/mw600/0076BSS5ly1fpxaje1tqjj30ia0mm0w8.jpghttp://wx3.sinaimg.cn/mw600/0076BSS5ly1fpxa6tjnyoj30f70odq60.jpghttp://wx2.sinaimg.cn/mw600/0076BSS5ly1fpx9w39sctj30hi0p0qqo.jpghttp://wx1.sinaimg.cn/mw600/0076BSS5ly1fpx9lkudjbj30m90xcgp0.jpg进程已结束,退出代码0</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;爬虫库requests-html&quot;&gt;&lt;a href=&quot;#爬虫库requests-html&quot; class=&quot;headerlink&quot; title=&quot;爬虫库requests-html&quot;&gt;&lt;/a&gt;爬虫库requests-html&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;一
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>django配置mysql数据库问题解决</title>
     <link href="http://yoursite.com/2018/03/31/django%E9%85%8D%E7%BD%AEmysql%E6%95%B0%E6%8D%AE%E5%BA%93%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
     <id>http://yoursite.com/2018/03/31/django配置mysql数据库问题解决/</id>
     <published>2018-03-31T10:51:40.000Z</published>
-    <updated>2018-03-31T13:20:51.739Z</updated>
+    <updated>2018-03-31T13:41:12.152Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://p18.qhimg.com/t01bf2560216870a6b1.jpg" alt=""></p><h1 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h1><pre><code># https://docs.djangoproject.com/en/1.10/ref/settings/#databases# 原有sqlite3数据库&apos;&apos;&apos;DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,        &apos;NAME&apos;: os.path.join(BASE_DIR, &apos;db.sqlite3&apos;),    }}&apos;&apos;&apos;# 更改为Mysql数据库DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,        &apos;NAME&apos;: &apos;数据库名字&apos;,        # 前提是你已经新建立好了数据库        &apos;USER&apos;: &apos;账号&apos;,        &apos;PASSWORD&apos;: &apos;密码&apos;,        &apos;HOST&apos;: &apos;127.0.0.1&apos;,        &apos;PORT&apos;: &apos;3306&apos;,        &apos;CHARSET&apos;:&apos;utf8&apos;,    }}</code></pre><h1 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql__init__.py,输入</p></blockquote><pre><code>import pymysqlpymysql.install_as_MySQLdb()</code></pre><h1 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql\base.py，注释掉这面这段代码</p></blockquote><pre><code>version = Database.version_info# 注释掉这面这段代码&apos;&apos;&apos;if version &lt; (1, 3, 3):raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)&apos;&apos;&apos;</code></pre>]]></content>
+    <content type="html"><![CDATA[<p><img src="http://p18.qhimg.com/t01bf2560216870a6b1.jpg" alt=""></p><h1 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h1><pre><code># https://docs.djangoproject.com/en/1.10/ref/settings/#databases# 原有sqlite3数据库&apos;&apos;&apos;DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,        &apos;NAME&apos;: os.path.join(BASE_DIR, &apos;db.sqlite3&apos;),    }}&apos;&apos;&apos;# 更改为Mysql数据库DATABASES = {    &apos;default&apos;: {        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,        &apos;NAME&apos;: &apos;数据库名字&apos;,        # 前提是你已经新建立好了数据库        &apos;USER&apos;: &apos;账号&apos;,        &apos;PASSWORD&apos;: &apos;密码&apos;,        &apos;HOST&apos;: &apos;127.0.0.1&apos;,        &apos;PORT&apos;: &apos;3306&apos;,        &apos;CHARSET&apos;:&apos;utf8&apos;,    }}</code></pre><h1 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Lib\site-packages\django\db\backends\mysql__init__.py,输入</p></blockquote><pre><code>import pymysqlpymysql.install_as_MySQLdb()</code></pre><h1 id="第三步："><a href="#第三步：" class="headerlink" title="第三步："></a>第三步：</h1><blockquote><p>打开C:\Users\Administrator\AppData\Local\Programs\Python\Python36   \Lib\site-packages\django\db\backends\mysql\base.py，注释掉这面这段代码</p></blockquote><pre><code>version = Database.version_info# 注释掉这面这段代码&apos;&apos;&apos;if version &lt; (1, 3, 3):raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__)&apos;&apos;&apos;</code></pre>]]></content>
     
     <summary type="html">
     
