@@ -75,6 +75,197 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-知乎答题王全自动程序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/04/知乎答题王全自动程序/" class="article-date">
+  <time datetime="2018-04-04T05:21:27.000Z" itemprop="datePublished">2018-04-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/04/知乎答题王全自动程序/">知乎答题王全自动程序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="知乎答题王全自动程序"><a href="#知乎答题王全自动程序" class="headerlink" title="知乎答题王全自动程序"></a>知乎答题王全自动程序</h1><ul>
+<li>注意：本程序在知乎作者Fengcc.com的基础上进一步完善，实现自动答题功能，其中他的抓包思想更是给了我很大的启发，他的文章地址：<a href="https://zhuanlan.zhihu.com/p/33429910" target="_blank" rel="noopener">头脑王者的Python答题助手——从OCR文字识别到Fiddler抓包</a>，我做的最主要就是利用adb，完成相应的点击，实现自动答题。</li>
+</ul>
+<h1 id="一-环境配置："><a href="#一-环境配置：" class="headerlink" title="一.环境配置："></a>一.环境配置：</h1><h2 id="安装抓包程序："><a href="#安装抓包程序：" class="headerlink" title="安装抓包程序："></a>安装抓包程序：</h2><ul>
+<li>下载<a href="https://telerik-fiddler.s3.amazonaws.com/fiddler/FiddlerSetup.exe" target="_blank" rel="noopener">Fiddler</a>,安装<a href="https://blog.csdn.net/galen2016/article/details/54405159" target="_blank" rel="noopener">教程</a>。</li>
+</ul>
+<h2 id="配置抓包程序："><a href="#配置抓包程序：" class="headerlink" title="配置抓包程序："></a>配置抓包程序：</h2><h3 id="1-设置抓包，如图"><a href="#1-设置抓包，如图" class="headerlink" title="1.设置抓包，如图"></a>1.设置抓包，如图</h3><p><img src="https://i.imgur.com/LNk43fd.jpg" alt=""></p>
+<h3 id="2-过滤掉干扰的请求-如图"><a href="#2-过滤掉干扰的请求-如图" class="headerlink" title="2.过滤掉干扰的请求,如图"></a>2.过滤掉干扰的请求,如图</h3><p><img src="https://i.imgur.com/bcxtMQg.jpg" alt=""></p>
+<h3 id="3-保存抓包数据，加入代码，注意修改目录，如图"><a href="#3-保存抓包数据，加入代码，注意修改目录，如图" class="headerlink" title="3.保存抓包数据，加入代码，注意修改目录，如图"></a>3.保存抓包数据，加入代码，注意修改目录，如图</h3><p><img src="https://i.imgur.com/ky39DEM.jpg" alt=""></p>
+<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><pre><code>if(oSession.host == &apos;question-zh.hortor.net&apos;){
+        oSession.utilDecodeResponse();   //Decoding HTTP request in case it&apos;s gzip
+        //Saving full request object (Including HTTP headers)
+        oSession.SaveResponse(&apos;E:\\python\\wchatgame\\reponse.txt&apos;,true);
+        //Saving just body
+        oSession.SaveResponseBody(&apos;E:\\python\\wchatgame\\responsebody.txt&apos;);
+    }
+</code></pre><h2 id="配置adb："><a href="#配置adb：" class="headerlink" title="配置adb："></a>配置adb：</h2><h3 id="这个我就不多说了，自己看教程吧"><a href="#这个我就不多说了，自己看教程吧" class="headerlink" title="这个我就不多说了，自己看教程吧"></a>这个我就不多说了，自己看<a href="https://blog.csdn.net/lxzmmd/article/details/50455671" target="_blank" rel="noopener">教程</a>吧</h3><h1 id="二-运行代码："><a href="#二-运行代码：" class="headerlink" title="二.运行代码："></a>二.运行代码：</h1><ul>
+<li>注意：注意自己调整相关参数，代码注释已经给出，保存到数据库的代码我也会放在后面，给需要的人使用</li>
+</ul>
+<p>#</p>
+<pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import json
+from urllib import parse
+import requests
+import os
+import time
+from bs4 import BeautifulSoup as BS
+# 存入题库，自行决定，是否启用
+# import sqltiku
+
+
+def get_appinf(filename):
+    f = open(filename, &apos;r&apos;, encoding=&apos;utf-8&apos;)
+    try:
+        j = json.loads(f.read())
+        if &apos;quiz&apos; in j[&apos;data&apos;] and &apos;options&apos; in j[&apos;data&apos;]:
+            num = j[&apos;data&apos;][&apos;num&apos;]
+            quiz = j[&apos;data&apos;][&apos;quiz&apos;]
+            print((&apos;第&apos; + str(num) + &apos;题：&apos; + quiz).center(50, &apos;*&apos;) + &apos;\n&apos;)
+            cho = j[&apos;data&apos;][&apos;options&apos;]
+            lei = j[&apos;data&apos;][&apos;school&apos;]
+            ke = j[&apos;data&apos;][&apos;type&apos;]
+            zuo = j[&apos;data&apos;][&apos;contributor&apos;]
+            ti = quiz
+            a = cho[0]
+            b = cho[1]
+            c = cho[2]
+            d = cho[3]
+            find_data = &apos;无&apos;
+            # 存入数据库
+            # sqltiku.find_sql(lei, ke, zuo, ti, a, b, c, d, find_data)
+        else:
+            pass
+        return quiz, cho
+
+    except:
+        pass
+    f.close()
+
+
+def search(question, choice):
+    pagenum = [0, 10, 20]
+    answer = []
+    for i in pagenum:
+        q = parse.quote(question.encode(&apos;gbk&apos;))
+        url = &apos;https://zhidao.baidu.com/search?word=&apos; + q + &apos;&amp;ie=gbk&amp;site=-1&amp;sites=0&amp;date=0&amp;pn=&apos; + str(i)
+        requests.packages.urllib3.disable_warnings()  # 忽视网页安全性问题
+        r = requests.get(url, verify=False)  # 不验证证书
+        r.encoding = &apos;gbk&apos;
+        soup = BS(r.text, &apos;html.parser&apos;)
+        want = soup.find(&apos;div&apos;, id=&apos;wgt-list&apos;)
+        wants = want.find_all(&apos;dl&apos;, class_=&apos;dl&apos;)
+        for i in wants:
+            ans = i.find(&apos;dd&apos;, class_=&apos;dd answer&apos;).text
+            answer.append(ans)
+
+    choiceset = {}
+    choiceset[&apos;A&apos;] = choice[0]
+    choiceset[&apos;B&apos;] = choice[1]
+    choiceset[&apos;C&apos;] = choice[2]
+    choiceset[&apos;D&apos;] = choice[3]
+
+    # 计算四个选项在爬取百度答案中的出现次数
+    results = {}
+    for i in choiceset:
+        account = []
+        for j in answer:
+            if choiceset[i] in j:
+                account.append(j)
+        result = len(account) / 30
+        results[i] = result
+        if i == &apos;D&apos;:
+            print((&apos;选&apos; + i + &apos;的可能性是：%.2f%%&apos; % (result * 100)).center(50) + &apos;\n&apos;)
+        else:
+            print((&apos;选&apos; + i + &apos;的可能性是：%.2f%%&apos; % (result * 100)).center(50))
+
+    bestchoice = max(results.items(), key=lambda x: x[1])[0]
+    print((&apos;此题最好选&apos; + bestchoice).center(50, &apos;-&apos;) + &apos;\n\n\n&apos;)
+
+    # 点击答案，每个手机分辨率不同，自行调整
+    if bestchoice == &apos;A&apos;:
+        os.system(&apos;adb shell input swipe 528 1045 528 1045&apos;)
+    elif bestchoice == &apos;B&apos;:
+        os.system(&apos;adb shell input swipe 528 1255 528 1255&apos;)
+    elif bestchoice == &apos;C&apos;:
+        os.system(&apos;adb shell input swipe 528 1432 528 1432&apos;)
+    elif bestchoice == &apos;D&apos;:
+        os.system(&apos;adb shell input swipe 528 1637 528 1637&apos;)
+
+
+def main():
+    try:
+        # 你在抓包程序中填的目录
+        que, cho = get_appinf(r&apos;E:\python\wchatgame\responsebody.txt&apos;)
+        search(que, cho)
+
+    except:
+        # pass
+        # 点击再来一次
+        os.system(&apos;adb shell input swipe 506 1363 506 1363&apos;)
+        # 选择挑战种类，这里你得自己调整啦
+        os.system(&apos;adb shell input swipe 526 759 526 759&apos;)
+
+
+if __name__ == &apos;__main__&apos;:
+    print(&apos;程序运行中...........&apos;)
+    while True:
+        main()
+        time.sleep(1)
+</code></pre><h4 id="数据库到的代码："><a href="#数据库到的代码：" class="headerlink" title="数据库到的代码："></a>数据库到的代码：</h4><pre><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import pymysql
+
+
+def find_sql(lei,ke,zuo,ti, a, b, c, d,find_data):#lei,ke,zuo,ti, a, b, c, d,find_data
+    # 数据库和表自己先弄好
+    db = pymysql.connect(&quot;localhost&quot;, &quot;root&quot;, &quot;密码&quot;, &quot;zhihu&quot;, charset=&quot;utf8&quot;)
+    cursor = db.cursor()
+    cursor.execute(&quot;select * from tikus&quot;)
+    finds = cursor.fetchall()
+    if ti in [find[3] for find in finds]:
+        print(&apos;题目已经存在！&apos;)
+    else:
+        sql = &quot;insert into tikus(类型, 科目, 作者, 题目, A, B, C, D, 答案) VALUES (&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;)&quot; % (lei,ke,zuo,ti, a, b, c, d,find_data)
+        cursor.execute(sql)
+        db.commit()
+        print(&apos;数据保存成功！&apos;)
+
+
+if __name__ == &apos;__main__&apos;:
+    find_sql()
+</code></pre><ul>
+<li>qq交流群：621076006 </li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/04/知乎答题王全自动程序/" data-id="cjfkpj56s000610qquzc083zj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-requests-html" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/01/requests-html/" class="article-date">
@@ -157,7 +348,7 @@ http://wx1.sinaimg.cn/mw600/0076BSS5ly1fpx9lkudjbj30m90xcgp0.jpg
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/requests-html/" data-id="cjfhxr14j000130qqief5b602" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/01/requests-html/" data-id="cjfkpj56o000410qqx0r474sx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +422,7 @@ raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you hav
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/django配置mysql数据库问题解决/" data-id="cjfhxr15v000330qq067nfz8j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/django配置mysql数据库问题解决/" data-id="cjfkpj55t000210qqz03jvo3z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,7 +515,7 @@ raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you hav
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/钢结构笔记/" data-id="cjfhxr16d000c30qqvioc2hsa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/26/钢结构笔记/" data-id="cjfkpj575000f10qq5tager8y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,68 +591,7 @@ if __name__ == &apos;__main__&apos;:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/获取mp3长度/" data-id="cjfhxr169000930qqu8qytn6g" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-音乐添加标签" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/23/音乐添加标签/" class="article-date">
-  <time datetime="2018-03-23T07:25:40.000Z" itemprop="datePublished">2018-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/23/音乐添加标签/">音乐添加标签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://p17.qhimg.com/t01f808b99bc2015a64.jpg" alt=""></p>
-<hr>
-<h2 id="一个音频处理库，在命令行中查看歌曲信息"><a href="#一个音频处理库，在命令行中查看歌曲信息" class="headerlink" title="一个音频处理库，在命令行中查看歌曲信息"></a>一个音频处理库，在命令行中查看歌曲信息</h2><blockquote>
-<p>官方地址:<a href="http://eyed3.readthedocs.io/en/latest/" target="_blank" rel="noopener">http://eyed3.readthedocs.io/en/latest/</a></p>
-</blockquote>
-<pre><code>$ eyeD3 song.mp3
-song.mp3      [ 3.06 MB ]
--------------------------------------------------------------------------
-ID3 v2.4:
-title: Hollow
-artist: Integrity
-album: Humanity Is The Devil
-album artist: None
-track: 2
--------------------------------------------------------------------------
-</code></pre><h2 id="在Python中使用eyeD3"><a href="#在Python中使用eyeD3" class="headerlink" title="在Python中使用eyeD3"></a>在Python中使用eyeD3</h2><pre><code>import eyed3
-
-audiofile = eyed3.load(&quot;song.mp3&quot;)
-audiofile.tag.artist = u&quot;Integrity&quot;
-audiofile.tag.album = u&quot;Humanity Is The Devil&quot;
-audiofile.tag.album_artist = u&quot;Integrity&quot;
-audiofile.tag.title = u&quot;Hollow&quot;
-audiofile.tag.track_num = 2
-
-audiofile.tag.save()
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/音乐添加标签/" data-id="cjfhxr16p000d30qq7cp26wuo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/23/获取mp3长度/" data-id="cjfkpj56x000a10qq966qifwo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -474,7 +604,7 @@ audiofile.tag.save()
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -505,6 +635,10 @@ audiofile.tag.save()
       <ul>
         
           <li>
+            <a href="/2018/04/04/知乎答题王全自动程序/">知乎答题王全自动程序</a>
+          </li>
+        
+          <li>
             <a href="/2018/04/01/requests-html/">爬虫库requests-html</a>
           </li>
         
@@ -518,10 +652,6 @@ audiofile.tag.save()
         
           <li>
             <a href="/2018/03/23/获取mp3长度/">文本转音频并自动播放</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/音乐添加标签/">音乐添加标签</a>
           </li>
         
       </ul>
