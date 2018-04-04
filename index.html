@@ -61,9 +61,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -74,6 +74,213 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-使用adb命令操控Android手机" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/04/使用adb命令操控Android手机/" class="article-date">
+  <time datetime="2018-04-04T10:51:18.000Z" itemprop="datePublished">2018-04-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/04/使用adb命令操控Android手机/">使用adb命令操控Android手机</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1) 手机连接电脑之前</p>
+<p>首先，查看安卓手机是否已经连接上电脑</p>
+<pre><code>adb devices
+</code></pre><p>让adb一直查找安卓设备，找到后才停止</p>
+<pre><code>adb wait-for-device
+</code></pre><p>2) 手机连接电脑后的操作</p>
+<p>2.0) 基本命令</p>
+<pre><code>连接多个安卓设备时，在adb命令后紧跟着使用 -s加序列号 来指定要操作的设备
+
+建议每次只连接一个安卓设备进行操作！！！
+建议每次只连接一个安卓设备进行操作！！！
+建议每次只连接一个安卓设备进行操作！！！
+
+$ adb devices
+List of devices attached
+FA6AX0301341    device
+ce0217122b56b02604  device
+
+$ adb -s FA6AX0301341 shell
+sailfish:/ $
+</code></pre><p>2.1) 锁定/解锁/重启/关机</p>
+<pre><code>锁定/解锁手机
+
+adb shell input keyevent 26 //锁定手机
+adb shell input keyevent 82 //解锁手机(如果设置了密码，会提示输入密码)
+
+输入密码，并回车
+
+adb shell input text 123456 &amp;&amp; adb shell input keyevent 66
+
+重启/关机
+
+adb reboot  //重启
+adb shell reboot  //重启
+adb shell reboot -p  //关机
+</code></pre><p>2.2) 系统设置</p>
+<pre><code>打开关闭蓝牙
+
+adb shell service call bluetooth_manager 6 //打开蓝牙
+adb shell service call bluetooth_manager 9 //关闭蓝牙
+
+打开关闭wifi
+
+adb shell svc wifi enable  //打开wifi
+adb shell svc wifi disable  //关闭wifi
+
+打开wifi设置界面
+
+adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings
+
+连接时保持亮屏 设置
+
+svc power stayon [true|false|usb|ac|wireless]
+
+参数解释：
+true: 任何情况下均保持亮屏
+false:任何情况下均不保持亮屏（经过设定的时间后自动黑屏）
+usb, ac, wireless：设置其中之一时，仅在这一种情况下才保持亮屏。
+</code></pre><p>2.3) 模拟本机操作</p>
+<pre><code>模拟按键操作
+
+adb shell input keyevent 111 //关闭软键盘(其实是按下ESC，111=KEYCODE_ESCAPE)
+</code></pre><p>更多按键代码，在这里<a href="https://developer.android.com/reference/android/view/KeyEvent.html" target="_blank" rel="noopener">https://developer.android.com/reference/android/view/KeyEvent.html</a></p>
+<pre><code>模拟滑动触屏操作
+
+adb shell input touchscreen swipe 930 880 930 380 //向上滑
+adb shell input touchscreen swipe 930 880 330 880 //向左滑
+adb shell input touchscreen swipe 330 880 930 880 //向右滑
+adb shell input touchscreen swipe 930 380 930 880 //向下滑
+
+模拟鼠标操作
+
+adb shell input mouse tap 100 500
+</code></pre><p>100是x，500是y。<br>原点在屏幕左上角。<br>2.4) 运行程序</p>
+<pre><code>拨打电话
+
+adb shell am start -a android.intent.action.CALL -d tel:10010
+
+打开网站
+
+adb shell am start -a android.intent.action.VIEW -d  http://google.com
+
+启动APP
+
+adb shell am start -n com.package.name/com.package.name.MainActivity
+adb shell am start -n com.package.name/.MainActivity
+</code></pre><p>3) 硬件高级调节<br>3.0) 信息查看</p>
+<pre><code>查看设备序列号
+
+adb get-serialno
+</code></pre><p>3.1) CPU相关</p>
+<pre><code>查看CPU温度
+先查看有哪些温度区域thermal zone
+
+$ adb shell ls sys/class/thermal/
+cooling_device0
+cooling_device1
+cooling_device2
+cooling_device3
+cooling_device4
+cooling_device5
+thermal_zone0
+thermal_zone1
+thermal_zone2
+thermal_zone3
+thermal_zone4
+thermal_zone5
+thermal_zone6
+thermal_zone7
+</code></pre><p>查看某个CPU温度</p>
+<pre><code>$ cat /sys/class/thermal/thermal_zone0/temp                                                                                                
+25800
+</code></pre><p>温度是milliCelsius，所以这里是25.8度C。</p>
+<pre><code>CPU设置
+查看当前手机可用的governor
+
+$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors                                                                     
+userspace interactive performance
+
+锁定CPU为最大频率
+</code></pre><ul>
+<li>参考：<a href="https://forum.xda-developers.com/showthread.php?t=1663809" target="_blank" rel="noopener">https://forum.xda-developers.com/showthread.php?t=1663809</a></li>
+</ul>
+<p>设置CPU governor为performance。</p>
+<pre><code>echo performance &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+</code></pre><p>4) 刷机</p>
+<pre><code>重启手机，进入recovery或bootloader模式
+
+adb reboot recovery //恢复模式
+adb reboot bootloader  //刷机模式。不同手机，命令不同，要试一下。
+adb reboot-bootloader
+adb reboot boot loader
+
+进入 fastboot 模式。
+
+ adb  reboot  fastboot
+或
+关机，然后同时按住 增加音量 和 电源 键开机
+</code></pre><p>5) 调试</p>
+<pre><code>抓取开机日志
+
+adb wait-for-device &amp;&amp; adb shell logcat -v threadtime | tee mybootup.log
+
+查看日志
+
+adb logcat
+
+关闭/重启adb服务进程
+
+adb kill-server
+adb start-server
+
+从本地复制文件到设备，或者反之
+
+adb push test.zip /sdcard/  //从本地复制文件到设备
+adb pull /sdcard/abc.zip  ~/  //从设备复制文件到本地
+
+显示已经安装的APP的包名
+
+adb shell pm list packages
+
+安装、删除APP
+
+adb install abc.apk //第一次安装。如果手机上已经有此app,则会报错。
+adb install -r abc.apk //如果已经安装过，保留原app的数据
+adb -s 11223344 install abc.apk  //当多个安卓连接到电脑时，安装到指定一台安卓上
+adb uninstall com.example.appname
+
+查看apk的版本（无需解压）
+
+aapt dump badging abcd.apk |grep version
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/04/使用adb命令操控Android手机/" data-id="cjfkzch920006zwqq94he18o1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-知乎答题王全自动程序" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -256,7 +463,7 @@ if __name__ == &apos;__main__&apos;:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/04/知乎答题王全自动程序/" data-id="cjfkplwfb0008jkqqrxl9wceq" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/04/04/知乎答题王全自动程序/" data-id="cjfkzch9f0009zwqqj7uy1lqv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,7 +555,7 @@ http://wx1.sinaimg.cn/mw600/0076BSS5ly1fpx9lkudjbj30m90xcgp0.jpg
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/01/requests-html/" data-id="cjfkplwet0004jkqqdpxlo0t1" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/04/01/requests-html/" data-id="cjfkzch8x0002zwqqd4897dhd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -422,7 +629,7 @@ raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you hav
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/31/django配置mysql数据库问题解决/" data-id="cjfkplwes0003jkqq6t0qh7ui" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/31/django配置mysql数据库问题解决/" data-id="cjfkzch8z0003zwqq0mnmxmb2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -515,83 +722,7 @@ raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you hav
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/26/钢结构笔记/" data-id="cjfkplwfd0009jkqq77yoi2y2" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-获取mp3长度" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/23/获取mp3长度/" class="article-date">
-  <time datetime="2018-03-23T07:33:00.000Z" itemprop="datePublished">2018-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/23/获取mp3长度/">文本转音频并自动播放</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://p15.qhimg.com/t016543f47973eb50ae.jpg" alt=""></p>
-<hr>
-<h1 id="这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人"><a href="#这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人" class="headerlink" title="这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人"></a>这个项目可以批量将文本转为音频，并且支持一般播放器播放，这里我们使用了python的一个库来播放，主要是源于我自己做的一个语音聊天机器人</h1><hr>
-<p>注意：使用过程中如果报错以下错，请重新安装<a href="https://pypi.python.org/pypi/python-magic-bin/0.4.14" target="_blank" rel="noopener">python-magic-bin</a></p>
-<pre><code>It is better to raise an ImportError since we are importing magic module raise
-ImportError(&apos;failed to find libmagic.  Check your installation&apos;)
-</code></pre><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre><code># encoding=utf-8
-import requests
-import pygame
-import time
-import eyed3
-
-# 使用pygame播放的话需要设置歌曲名为非中文，使用如网易云这类的播放器就不用管这个
-path = &apos;music.mp3&apos;
-
-# 转为音频文件
-def get_mp3():
-    text = &apos;&apos;&apos;
-    央视网消息：近期，中央政治局同志首次向党中央和习近平总书记书面述职，这是他们履新近半年来交的首份答卷。习近平认真审阅了中央政治局同志的述职报告，并就中央政治局同志履行职责、做好工作、改进作风提出重要要求。
-    &apos;&apos;&apos;
-    url = &apos;https://tts.baidu.com/text2audio?cuid=baiduid&amp;lan=zh&amp;ctp=1&amp;pdt=311&amp;spd=6&amp;tex=&apos;+text
-    find = requests.get(url)
-    with open(path,&apos;wb&apos;) as f:
-        f.write(find.content)
-        f.close()
-
-# 播放音频
-def player():
-    pygame.mixer.init()
-    print(&quot;播放音乐&quot;)
-    pygame.mixer.music.load(path)
-    xx = eyed3.load(path)
-    music_time = xx.info.time_secs
-    pygame.mixer.music.play()
-    time.sleep(music_time)
-    pygame.mixer.music.stop()
-
-if __name__ == &apos;__main__&apos;:
-    get_mp3()
-    player()
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/获取mp3长度/" data-id="cjfkplwfq000bjkqqq8qpsswp" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2018/03/26/钢结构笔记/" data-id="cjfkzch9k000bzwqqdu37qu2r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,9 +761,13 @@ if __name__ == &apos;__main__&apos;:
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/04/04/使用adb命令操控Android手机/">使用adb命令操控Android手机</a>
+          </li>
         
           <li>
             <a href="/2018/04/04/知乎答题王全自动程序/">知乎答题王全自动程序</a>
@@ -648,10 +783,6 @@ if __name__ == &apos;__main__&apos;:
         
           <li>
             <a href="/2018/03/26/钢结构笔记/">钢结构笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/23/获取mp3长度/">文本转音频并自动播放</a>
           </li>
         
       </ul>

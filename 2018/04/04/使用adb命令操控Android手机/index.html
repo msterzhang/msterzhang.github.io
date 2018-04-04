@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用adb命令操控Android手机 | Mster Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1) 手机连接电脑之前 首先，查看安卓手机是否已经连接上电脑 adb devices 让adb一直查找安卓设备，找到后才停止 adb wait-for-device 2) 手机连接电脑后的操作 2.0) 基本命令 连接多个安卓设备时，在adb命令后紧跟着使用 -s加序列号 来指定要操作的设备  建议每次只连接一个安卓设备进行操作！！！ 建议每次只连接一个安卓设备进行操作！！！ 建议每次只连接一个安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用adb命令操控Android手机">
+<meta property="og:url" content="http://yoursite.com/2018/04/04/使用adb命令操控Android手机/index.html">
+<meta property="og:site_name" content="Mster Blog">
+<meta property="og:description" content="1) 手机连接电脑之前 首先，查看安卓手机是否已经连接上电脑 adb devices 让adb一直查找安卓设备，找到后才停止 adb wait-for-device 2) 手机连接电脑后的操作 2.0) 基本命令 连接多个安卓设备时，在adb命令后紧跟着使用 -s加序列号 来指定要操作的设备  建议每次只连接一个安卓设备进行操作！！！ 建议每次只连接一个安卓设备进行操作！！！ 建议每次只连接一个安">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-04T10:58:56.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用adb命令操控Android手机">
+<meta name="twitter:description" content="1) 手机连接电脑之前 首先，查看安卓手机是否已经连接上电脑 adb devices 让adb一直查找安卓设备，找到后才停止 adb wait-for-device 2) 手机连接电脑后的操作 2.0) 基本命令 连接多个安卓设备时，在adb命令后紧跟着使用 -s加序列号 来指定要操作的设备  建议每次只连接一个安卓设备进行操作！！！ 建议每次只连接一个安卓设备进行操作！！！ 建议每次只连接一个安">
+  
+    <link rel="alternate" href="/atom.xml" title="Mster Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <link rel="icon" type="image/png" href="https://i.imgur.com/YWK9Dob.jpg">
+<header id="header">
+  <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js"></script>
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap"></h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">存档</a>
+        
+          <a class="main-nav-link" href="/imgs.html">图片</a>
+        
+          <a class="main-nav-link" href="/movie/home.html">电影</a>
+        
+          <a class="main-nav-link" href="http://lab.mkblog.cn/music/">音乐</a>
+        
+          <a class="main-nav-link" href="/games/AiringGo/AiringGo.html">游戏</a>
+        
+          <a class="main-nav-link" href="/me/me.html">关于我</a>
+        
+          <a class="main-nav-link" href="/links.html">友情链接</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-使用adb命令操控Android手机" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/04/使用adb命令操控Android手机/" class="article-date">
+  <time datetime="2018-04-04T10:51:18.000Z" itemprop="datePublished">2018-04-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用adb命令操控Android手机
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1) 手机连接电脑之前</p>
+<p>首先，查看安卓手机是否已经连接上电脑</p>
+<pre><code>adb devices
+</code></pre><p>让adb一直查找安卓设备，找到后才停止</p>
+<pre><code>adb wait-for-device
+</code></pre><p>2) 手机连接电脑后的操作</p>
+<p>2.0) 基本命令</p>
+<pre><code>连接多个安卓设备时，在adb命令后紧跟着使用 -s加序列号 来指定要操作的设备
+
+建议每次只连接一个安卓设备进行操作！！！
+建议每次只连接一个安卓设备进行操作！！！
+建议每次只连接一个安卓设备进行操作！！！
+
+$ adb devices
+List of devices attached
+FA6AX0301341    device
+ce0217122b56b02604  device
+
+$ adb -s FA6AX0301341 shell
+sailfish:/ $
+</code></pre><p>2.1) 锁定/解锁/重启/关机</p>
+<pre><code>锁定/解锁手机
+
+adb shell input keyevent 26 //锁定手机
+adb shell input keyevent 82 //解锁手机(如果设置了密码，会提示输入密码)
+
+输入密码，并回车
+
+adb shell input text 123456 &amp;&amp; adb shell input keyevent 66
+
+重启/关机
+
+adb reboot  //重启
+adb shell reboot  //重启
+adb shell reboot -p  //关机
+</code></pre><p>2.2) 系统设置</p>
+<pre><code>打开关闭蓝牙
+
+adb shell service call bluetooth_manager 6 //打开蓝牙
+adb shell service call bluetooth_manager 9 //关闭蓝牙
+
+打开关闭wifi
+
+adb shell svc wifi enable  //打开wifi
+adb shell svc wifi disable  //关闭wifi
+
+打开wifi设置界面
+
+adb shell am start -a android.intent.action.MAIN -n com.android.settings/.wifi.WifiSettings
+
+连接时保持亮屏 设置
+
+svc power stayon [true|false|usb|ac|wireless]
+
+参数解释：
+true: 任何情况下均保持亮屏
+false:任何情况下均不保持亮屏（经过设定的时间后自动黑屏）
+usb, ac, wireless：设置其中之一时，仅在这一种情况下才保持亮屏。
+</code></pre><p>2.3) 模拟本机操作</p>
+<pre><code>模拟按键操作
+
+adb shell input keyevent 111 //关闭软键盘(其实是按下ESC，111=KEYCODE_ESCAPE)
+</code></pre><p>更多按键代码，在这里<a href="https://developer.android.com/reference/android/view/KeyEvent.html" target="_blank" rel="noopener">https://developer.android.com/reference/android/view/KeyEvent.html</a></p>
+<pre><code>模拟滑动触屏操作
+
+adb shell input touchscreen swipe 930 880 930 380 //向上滑
+adb shell input touchscreen swipe 930 880 330 880 //向左滑
+adb shell input touchscreen swipe 330 880 930 880 //向右滑
+adb shell input touchscreen swipe 930 380 930 880 //向下滑
+
+模拟鼠标操作
+
+adb shell input mouse tap 100 500
+</code></pre><p>100是x，500是y。<br>原点在屏幕左上角。<br>2.4) 运行程序</p>
+<pre><code>拨打电话
+
+adb shell am start -a android.intent.action.CALL -d tel:10010
+
+打开网站
+
+adb shell am start -a android.intent.action.VIEW -d  http://google.com
+
+启动APP
+
+adb shell am start -n com.package.name/com.package.name.MainActivity
+adb shell am start -n com.package.name/.MainActivity
+</code></pre><p>3) 硬件高级调节<br>3.0) 信息查看</p>
+<pre><code>查看设备序列号
+
+adb get-serialno
+</code></pre><p>3.1) CPU相关</p>
+<pre><code>查看CPU温度
+先查看有哪些温度区域thermal zone
+
+$ adb shell ls sys/class/thermal/
+cooling_device0
+cooling_device1
+cooling_device2
+cooling_device3
+cooling_device4
+cooling_device5
+thermal_zone0
+thermal_zone1
+thermal_zone2
+thermal_zone3
+thermal_zone4
+thermal_zone5
+thermal_zone6
+thermal_zone7
+</code></pre><p>查看某个CPU温度</p>
+<pre><code>$ cat /sys/class/thermal/thermal_zone0/temp                                                                                                
+25800
+</code></pre><p>温度是milliCelsius，所以这里是25.8度C。</p>
+<pre><code>CPU设置
+查看当前手机可用的governor
+
+$ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors                                                                     
+userspace interactive performance
+
+锁定CPU为最大频率
+</code></pre><ul>
+<li>参考：<a href="https://forum.xda-developers.com/showthread.php?t=1663809" target="_blank" rel="noopener">https://forum.xda-developers.com/showthread.php?t=1663809</a></li>
+</ul>
+<p>设置CPU governor为performance。</p>
+<pre><code>echo performance &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+</code></pre><p>4) 刷机</p>
+<pre><code>重启手机，进入recovery或bootloader模式
+
+adb reboot recovery //恢复模式
+adb reboot bootloader  //刷机模式。不同手机，命令不同，要试一下。
+adb reboot-bootloader
+adb reboot boot loader
+
+进入 fastboot 模式。
+
+ adb  reboot  fastboot
+或
+关机，然后同时按住 增加音量 和 电源 键开机
+</code></pre><p>5) 调试</p>
+<pre><code>抓取开机日志
+
+adb wait-for-device &amp;&amp; adb shell logcat -v threadtime | tee mybootup.log
+
+查看日志
+
+adb logcat
+
+关闭/重启adb服务进程
+
+adb kill-server
+adb start-server
+
+从本地复制文件到设备，或者反之
+
+adb push test.zip /sdcard/  //从本地复制文件到设备
+adb pull /sdcard/abc.zip  ~/  //从设备复制文件到本地
+
+显示已经安装的APP的包名
+
+adb shell pm list packages
+
+安装、删除APP
+
+adb install abc.apk //第一次安装。如果手机上已经有此app,则会报错。
+adb install -r abc.apk //如果已经安装过，保留原app的数据
+adb -s 11223344 install abc.apk  //当多个安卓连接到电脑时，安装到指定一台安卓上
+adb uninstall com.example.appname
+
+查看apk的版本（无需解压）
+
+aapt dump badging abcd.apk |grep version
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/04/04/使用adb命令操控Android手机/" data-id="cjfkzch920006zwqq94he18o1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/04/知乎答题王全自动程序/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">知乎答题王全自动程序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/04/04/使用adb命令操控Android手机/">使用adb命令操控Android手机</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/04/知乎答题王全自动程序/">知乎答题王全自动程序</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/01/requests-html/">爬虫库requests-html</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/31/django配置mysql数据库问题解决/">django配置mysql数据库问题解决</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/26/钢结构笔记/">钢结构笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      
+<footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mster Zhang
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">存档</a>
+  
+    <a href="/imgs.html" class="mobile-nav-link">图片</a>
+  
+    <a href="/movie/home.html" class="mobile-nav-link">电影</a>
+  
+    <a href="http://lab.mkblog.cn/music/" class="mobile-nav-link">音乐</a>
+  
+    <a href="/games/AiringGo/AiringGo.html" class="mobile-nav-link">游戏</a>
+  
+    <a href="/me/me.html" class="mobile-nav-link">关于我</a>
+  
+    <a href="/links.html" class="mobile-nav-link">友情链接</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":100,"height":200,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}});</script></body>
+</html>
