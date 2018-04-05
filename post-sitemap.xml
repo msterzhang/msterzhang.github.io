@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/04/05/python%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5/</loc>
+        <lastmod>2018-04-05T07:45:31.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/04/04/%E4%BD%BF%E7%94%A8adb%E5%91%BD%E4%BB%A4%E6%93%8D%E6%8E%A7Android%E6%89%8B%E6%9C%BA/</loc>
         <lastmod>2018-04-04T10:58:56.407Z</lastmod>
         <changefreq>weekly</changefreq>

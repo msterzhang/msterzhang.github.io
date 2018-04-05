@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-04T10:58:56.407Z</updated>
+  <updated>2018-04-05T07:45:31.755Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中获取用户输入</title>
+    <link href="http://yoursite.com/2018/04/05/python%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5/"/>
+    <id>http://yoursite.com/2018/04/05/python中获取用户输入/</id>
+    <published>2018-04-05T07:43:48.000Z</published>
+    <updated>2018-04-05T07:45:31.755Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><pre><code>import sys</code></pre><h2 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h2><pre><code>imagePath = sys.argv[1]</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;导入包&quot;&gt;&lt;a href=&quot;#导入包&quot; class=&quot;headerlink&quot; title=&quot;导入包&quot;&gt;&lt;/a&gt;导入包&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;import sys
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;获取参数&quot;&gt;&lt;a href=&quot;#获取参数&quot; clas
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用adb命令操控Android手机</title>

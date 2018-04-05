@@ -3,21 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>音乐添加标签 | Mster Blog</title>
+  <title>python中获取用户输入 | Mster Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个音频处理库，在命令行中查看歌曲信息 官方地址:http://eyed3.readthedocs.io/en/latest/  $ eyeD3 song.mp3 song.mp3      [ 3.06 MB ] ------------------------------------------------------------------------- ID3 v2.4: title:">
+  <meta name="description" content="导入包import sys 获取参数imagePath = sys.argv[1]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="音乐添加标签">
-<meta property="og:url" content="http://yoursite.com/2018/03/23/音乐添加标签/index.html">
+<meta property="og:title" content="python中获取用户输入">
+<meta property="og:url" content="http://yoursite.com/2018/04/05/python中获取用户输入/index.html">
 <meta property="og:site_name" content="Mster Blog">
-<meta property="og:description" content="一个音频处理库，在命令行中查看歌曲信息 官方地址:http://eyed3.readthedocs.io/en/latest/  $ eyeD3 song.mp3 song.mp3      [ 3.06 MB ] ------------------------------------------------------------------------- ID3 v2.4: title:">
+<meta property="og:description" content="导入包import sys 获取参数imagePath = sys.argv[1]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p17.qhimg.com/t01f808b99bc2015a64.jpg">
-<meta property="og:updated_time" content="2018-03-23T08:02:42.153Z">
+<meta property="og:updated_time" content="2018-04-05T07:45:31.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="音乐添加标签">
-<meta name="twitter:description" content="一个音频处理库，在命令行中查看歌曲信息 官方地址:http://eyed3.readthedocs.io/en/latest/  $ eyeD3 song.mp3 song.mp3      [ 3.06 MB ] ------------------------------------------------------------------------- ID3 v2.4: title:">
-<meta name="twitter:image" content="http://p17.qhimg.com/t01f808b99bc2015a64.jpg">
+<meta name="twitter:title" content="python中获取用户输入">
+<meta name="twitter:description" content="导入包import sys 获取参数imagePath = sys.argv[1]">
   
     <link rel="alternate" href="/atom.xml" title="Mster Blog" type="application/atom+xml">
   
@@ -79,10 +77,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-音乐添加标签" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-python中获取用户输入" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/03/23/音乐添加标签/" class="article-date">
-  <time datetime="2018-03-23T07:25:40.000Z" itemprop="datePublished">2018-03-23</time>
+    <a href="/2018/04/05/python中获取用户输入/" class="article-date">
+  <time datetime="2018-04-05T07:43:48.000Z" itemprop="datePublished">2018-04-05</time>
 </a>
     
   </div>
@@ -93,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      音乐添加标签
+      python中获取用户输入
     </h1>
   
 
@@ -101,36 +99,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://p17.qhimg.com/t01f808b99bc2015a64.jpg" alt=""></p>
-<hr>
-<h2 id="一个音频处理库，在命令行中查看歌曲信息"><a href="#一个音频处理库，在命令行中查看歌曲信息" class="headerlink" title="一个音频处理库，在命令行中查看歌曲信息"></a>一个音频处理库，在命令行中查看歌曲信息</h2><blockquote>
-<p>官方地址:<a href="http://eyed3.readthedocs.io/en/latest/" target="_blank" rel="noopener">http://eyed3.readthedocs.io/en/latest/</a></p>
-</blockquote>
-<pre><code>$ eyeD3 song.mp3
-song.mp3      [ 3.06 MB ]
--------------------------------------------------------------------------
-ID3 v2.4:
-title: Hollow
-artist: Integrity
-album: Humanity Is The Devil
-album artist: None
-track: 2
--------------------------------------------------------------------------
-</code></pre><h2 id="在Python中使用eyeD3"><a href="#在Python中使用eyeD3" class="headerlink" title="在Python中使用eyeD3"></a>在Python中使用eyeD3</h2><pre><code>import eyed3
-
-audiofile = eyed3.load(&quot;song.mp3&quot;)
-audiofile.tag.artist = u&quot;Integrity&quot;
-audiofile.tag.album = u&quot;Humanity Is The Devil&quot;
-audiofile.tag.album_artist = u&quot;Integrity&quot;
-audiofile.tag.title = u&quot;Hollow&quot;
-audiofile.tag.track_num = 2
-
-audiofile.tag.save()
+        <h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><pre><code>import sys
+</code></pre><h2 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h2><pre><code>imagePath = sys.argv[1]
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/23/音乐添加标签/" data-id="cjfm8wfig000fzoqqv7jy4uej" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/04/05/python中获取用户输入/" data-id="cjfm8wfhs0001zoqqibwwzmn7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,19 +114,10 @@ audiofile.tag.save()
     
 <nav id="article-nav">
   
-    <a href="/2018/03/23/获取mp3长度/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          文本转音频并自动播放
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/23/用中文写python代码/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/04/04/使用adb命令操控Android手机/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">用中文写python代码</div>
+      <div class="article-nav-title">使用adb命令操控Android手机</div>
     </a>
   
 </nav>
